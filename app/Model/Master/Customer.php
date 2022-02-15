@@ -86,4 +86,20 @@ class Customer extends MasterModel
 
         return $receivables->debit - $receivables->credit;
     }
+
+    /**
+     * Get the pricingGroup that owns the phone.
+     */
+    public function pricingGroup()
+    {
+        return $this->belongsTo(\App\Model\Master\PricingGroup::class, 'pricing_group_id');
+    }
+
+    /**
+     * Get the customerGroup that owns the phone.
+     */
+    // public function customerGroup()
+    // {
+    //     return $this->belongsTo(\App\Model\Master\CustomerGroup::class, 'pricing_group_id');
+    // }
 }

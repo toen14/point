@@ -6,7 +6,7 @@
     "require": {
         "php": "^7.2.5",
         "ext-pdo": "*",
-        "barryvdh/laravel-dompdf": "^0.8.5",
+        "barryvdh/laravel-dompdf": "^1.0",
         "bugsnag/bugsnag-laravel": "^2.18",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",
@@ -19,6 +19,7 @@
         "laravel/socialite": "^4.3",
         "laravel/telescope": "^3.1",
         "laravel/tinker": "^2.0",
+        "lcobucci/jwt": "3.3.3",
         "league/flysystem-aws-s3-v3": "~1.0",
         "maatwebsite/excel": "^3.1",
         "masterro/laravel-xss-filter": "^1.2",
@@ -76,6 +77,9 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "symfony/thanks": true
+        }
     }
 }

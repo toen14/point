@@ -24,6 +24,8 @@ use App\Imports\Kpi\TemplateCheckImport;
 use App\Imports\Master\CustomerImport;
 use App\Model\CloudStorage;
 use App\Model\HumanResource\Kpi\KpiTemplate;
+use App\Exports\CustomersExport;
+
 class CustomerController extends Controller
 {
     /**
@@ -115,6 +117,7 @@ class CustomerController extends Controller
 
     public function importCustomer(Request $request)
     {
+        
         $request->validate([
             'code' => 'required',
             'name' => 'required',
@@ -129,6 +132,11 @@ class CustomerController extends Controller
         return response()->json([
             'message' => 'success',
         ], 200);
+    }
+
+    public function exportCustomer()
+    {
+        return Excel::download(new CustomersExport, 'customers.xlsx');
     }
 
 

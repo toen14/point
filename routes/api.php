@@ -9,7 +9,7 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::get('cs', 'Api\Master\CustomerController@exportCustomer'); // for test export
 Route::prefix('v1')->namespace('Api')->middleware('api-middleware')->group(function () {
     Route::post('register', 'RegisterController@store');
 
